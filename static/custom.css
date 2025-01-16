@@ -1,0 +1,29 @@
+/* Custom CSS for background animation */
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('../static/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: fadeInBackground 3s ease-in-out; /* Animation effect */
+}
+
+.content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+        transform: scale(1.1); /* Start a little larger */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
+}

@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Monitor Progress</h1>
+<p>Upload an image to classify construction progress:</p>
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input type="file" class="form-control" id="image" name="image" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Classify</button>
+</form>
+
+{% if result %}
+<h3 class="mt-4">Predicted Class: {{ result }}</h3>
+<img src="{{ image_url }}" alt="Uploaded Image" class="img-fluid mt-3">
+{% endif %}
+{% endblock %}
